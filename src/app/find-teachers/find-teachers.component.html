@@ -1,0 +1,42 @@
+<div>
+    <nav>
+        <i class="fa fa-arrow-left" routerLink="/"></i>
+        <h3>All teachers</h3>
+    </nav>
+    <div class="cards">
+        <div class="content"  *ngFor="let item of names; let i = index" [attr.data-index]="i">
+            <!-- <p>{{ i }}</p> -->
+                <!-- <img  src= "{{ images[i] }}" alt="profile"> -->
+                <img src={{images[i]}}  alt="">
+                <div class="info">
+                    <h3 >{{ names[i] }}</h3>
+                    <p >{{ experience[i] }} yrs of experience</p>
+                    <p >{{ services[i] }}</p>
+                </div>
+            <div>
+                <i class="fa fa-ellipsis-h" (click)="toggle(i)" ></i>
+                <div class="hide" *ngIf="show[i]"> 
+                    <div class="show" >
+                        <i class="fa fa-pencil" [routerLink]="['/edit-teacher']" [queryParams]="{ id: teacherId[i] }"></i>
+                        <i class="fa fa-trash" (click)="delete(teacherId[i])"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="flex">
+        <button (click)="openFilterDialog()">Filter</button>
+        <button (click)="openSortDialog()">Sort</button>
+    </div>
+    <div class="float">
+        <i class="fa fa-filter" (click)="openFilterDialog()"></i>
+
+        <i class="fa fa-sort-alpha-asc" (click)="openSortDialog()"></i>
+    </div>
+
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,10 @@
+<div class="content">
+    <input  [(ngModel)]="sortBy" type="radio" id="sort1" name="sort" value="teacher_name">
+    <label for="sort1">Alphabetically A-Z</label><br>
+    <input [(ngModel)]="sortBy" type="radio" id="sort2" name="sort" value="experience">
+    <label for="sort2">Years of experience</label><br>  
+    <div class="btn">
+        <button (click)="close()">Cancel</button>
+        <button (click)="sort()">Apply</button>
+    </div>
+</div>

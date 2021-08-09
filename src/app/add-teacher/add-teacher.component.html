@@ -1,0 +1,26 @@
+<div>
+    <nav>
+        <i class="fa fa-arrow-left" routerLink="/"></i>
+        <h3>Add a new teacher</h3>
+    </nav>
+    <div>
+        
+        <form  class="content">
+            <label>Your Name</label>
+            <input type="text" name="name" #name placeholder="Ex: John Doe">
+            <label>Services you provide</label>
+            <ng-select [multiple]="true" [(ngModel)]="selectedServices" [ngModelOptions]="{standalone: true}">
+                <ng-option *ngFor="let service of services" [value]="service">{{service}}</ng-option>
+            </ng-select>
+            <label>Languages you teach in</label>
+            <ng-select [multiple]="true" [(ngModel)]="selectedLanguages" [ngModelOptions]="{standalone: true}">
+                <ng-option *ngFor="let language of languages" [value]="language">{{language}}</ng-option>
+            </ng-select>
+            <label>Years of proffesional experience</label>
+            <input type="number" name="experience" #experience placeholder="Ex: 23">
+            <label>Upload your image</label>
+            <input type="file" name="image"  #file accept="image/jpeg" placeholder="Ex: 23" (change)="onFileSelect($event)">
+            <button class="btn btn-primary" (click)="onSubmit(name.value,experience.value)">Submit</button>
+        </form>
+    </div>
+</div>

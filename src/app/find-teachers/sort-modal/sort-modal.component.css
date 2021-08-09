@@ -1,0 +1,31 @@
+.content > *{
+    margin: 10px 0;
+}
+
+.content label{
+    font-weight: 500;
+    font-size: larger;
+}
+.content input{
+    width: 40px;
+}
+
+.btn{
+    display: flex;
+    float: right;
+}
+.btn button{
+    margin-right: 10px;
+    border-color: transparent;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 0 10px;
+}
+.btn button:nth-child(even){
+    background-color: tomato;
+    color: white;
+}
+.btn button:nth-child(odd){
+    background-color: white;
+    color: tomato;
+}

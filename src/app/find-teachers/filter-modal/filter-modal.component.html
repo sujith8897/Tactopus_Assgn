@@ -1,0 +1,24 @@
+<div class="content">
+    <!-- <label>Service</label>
+    <ng-select [multiple]="true" [(ngModel)]="selectedServices" >
+        <ng-option *ngFor="let service of services" [value]="service">{{service}}</ng-option>
+    </ng-select>
+    <label>Language</label>
+    <ng-select [multiple]="true" [(ngModel)]="selectedLanguages" >
+        <ng-option *ngFor="let language of languages" [value]="language">{{language}}</ng-option>
+    </ng-select> -->
+
+    <label>Years of experience</label>
+    <div class="flex">
+        <output>0</output>
+        <input [(ngModel)]="experience" type="range" min="0" max="80">
+        <output>80</output>
+    </div>
+    
+    <div class="btn">
+        <button (click)="close()">Cancel</button>
+        <button (click)="filter()">Apply</button>
+        <button (click)="reset()" class="reset" style="background-color: lightskyblue;color: black;">Reset</button>
+    </div>
+
+</div>
